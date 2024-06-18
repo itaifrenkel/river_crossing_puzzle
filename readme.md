@@ -113,7 +113,7 @@ def write_wisdom_file_tool(filename, contents):
         raise ToolException(f"Error writing to file '{filepath}': {e}")
 ```
 
-__Insight 2: Tool Guardrails__ 
+__Insight #2: Tool Guardrails__ 
 
 Langchain comes with readonly file tools which are compatible with CrewAI agents. It does not, however, include tools to overwrite files. 
 I started with a naive oneliner write file tool. However, after the model tried overwriting unrelated files, I've added input parameter normalization and validation. 
@@ -167,7 +167,7 @@ Initial Plan:
 ```
 Notice how the resulting plan uses the terms left and right bank.
 
-__Insight 3: Grounding with Reality__ 
+__Insight #3: Grounding with Reality__ 
 
 By providing the model a tool that describes the (simulated) world, the resulting plan is a bit more grounded, and easier to follow.
 
@@ -191,7 +191,7 @@ Our most important design decision is the data flow diagram. It helps visualize 
 +----------------- (final plan) -------------------------------------------------+
 ```
 
-__Insight 4: Contextual Memory__ 
+__Insight #4: Contextual Memory__ 
 
 When a task is given to an agent, the agent may [access information from other recent tasks](https://github.com/joaomdmoura/crewAI/blob/2a0e21ca76f744e6409271c53bd1de9cf63d9829/src/crewai/agent.py#L216-L224). This adds implicit data flow paths in the diagram (not shown above). 
 In order to have strict data flow control, this feature was disabled in this demo.
@@ -204,7 +204,7 @@ Now, we need another agent, The Farmer, to execute the plan step by step. After 
 Then, The Village Wisdom would reflect by comparing the plan with the execution trace. If needed, they would learn from that experience and write an improved plan for the next run. 
 
 
-__Insight 5: Goal Oriented Task Descriptions__
+__Insight #5: Goal Oriented Task Descriptions__
 Each task prompt must repeat the goal of getting the farmer, goat, and cabbage to the right riverbank.
 This is necessary to keep the agents focused on the goal.
 The planning task requires the goal to create a relevant plan. 
@@ -228,7 +228,7 @@ Parse the plan into a JSON list of steps.
 Each step must be stripped of numbering prefixes, hyphens, or single quotes, and must be surrounded by double quotes.
 ```
 
-__Insight 6: Output Schema__
+__Insight #6: Output Schema__
 
 When given a data schema, GPT-4 can generate structured data instead of free text.
 This comes in very handy when the task flow is dynamic (one task output determines the next task to run).
@@ -286,7 +286,7 @@ Thought: The farmer, goat, and cabbage are all on the right riverbank. I can now
 Final Answer: "SUCCESS"
 ```
 
-__Insight 7: Deterministic Execution vs Agentic Flexibility__ 
+__Insight #7: Deterministic Execution vs Agentic Flexibility__ 
 
 For GPT-4 to execute the plan deterministically, we need to break the plan into small tasks and execute them one by one. 
 The agent running each step must not have access to the complete plan, unless you want them to skip or combine steps. 
@@ -295,7 +295,7 @@ To disable this agentic capability, we could have uses the model to convert the 
 This is the approach taken by other projects such as Microsoft's Semantic Kernel [Handlebars Planner](https://www.developerscantina.com/p/semantic-kernel-new-planners/). The trade-off is between deterministic behavior and the ability to react to unplanned events or incorrect inputs.
 
 
-__Insight 8: Precise Step Descriptions__ 
+__Insight #8: Precise Step Descriptions__ 
 
 Each step must use language that does not leave room for interpretation. For example: `The farmer crosses the river` becomes `The farmer crosses the river alone`. And then the cross_river tool needs to internally convert "farmer" or "alone" to None, in order to accommodate different model interpretations.
 
@@ -346,7 +346,7 @@ Final Plan:
 - The farmer crosses the river with a cabbage to right bank.
 ```
 
-__Insight 9: Avoid State in Long Term Contextual Memory__
+__Insight #9: Avoid State in Long Term Contextual Memory__
 
 The final plan phrasing does not include the river state. 
  If the final plan had included statements like `Now the left bank has a cabbage while the right bank has a farmer and a goat`, then the next run would treat these statements as facts. If those contradicted the scout tool output, it would have resulted in a very confused farmer, and non-deterministic behavior.
@@ -384,7 +384,7 @@ Problem Details:
 A farmer wants to ...          
 ```
 
-__Insight 10: Control Flow Challenges__ 
+__Insight #10: Control Flow Challenges__ 
 
 The control flow is difficult for GPT-4 to follow. 
 The prompt "one step at a time, completing each step before moving on to the next" is very important.
