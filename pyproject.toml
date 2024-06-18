@@ -1,0 +1,19 @@
+# file: pyproject.toml
+
+[project]
+name = "the-farmer-crosses-the-river"
+version = "0.1.0"
+description = "A demo for using agents for planning and reasoning."
+authors = [
+    { name = "Itai Friendinger", email = "itai@forter.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "crewai~=0.30.11",
+    "crewai-tools~=0.2.6",
+    "keyring",
+    "python-dotenv"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
