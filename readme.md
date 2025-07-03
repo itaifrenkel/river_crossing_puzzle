@@ -114,7 +114,8 @@ Now, the Farmer, the goat, and the cabbage are safely on the other side of the r
 
 ```
 
-> [!TIP] <b>Insight #1: Autoregressive Models Limitations</b><br>
+> [!TIP]
+> <b>Insight #1: Autoregressive Models Limitations</b><br>
 > GPT-4 is an autoregressive model that generates sequences by predicting the next token based on previously generated tokens.
 > It memorized the riddle's solution (from Wikipedia, most likely) and modified it by removing the wolf. 
 > However, it does not have an internal understanding of our world; therefore, its reasoning and planning capabilities are limited.
