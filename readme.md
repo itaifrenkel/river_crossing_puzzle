@@ -114,17 +114,12 @@ Now, the Farmer, the goat, and the cabbage are safely on the other side of the r
 
 ```
 
-Insight #1: Autoregressive Models Limitations 
-
-GPT-4 is an autoregressive model that generates sequences by predicting the next token based on previously generated tokens.
-
-It memorized the riddle's solution (from Wikipedia, most likely) and modified it by removing the wolf. 
-
-However, it does not have an internal understanding of our world; therefore, its reasoning and planning capabilities are limited.
-
-Even if we try and force it to print the items on each riverbank after every step and ensure that items can only move with the boat, it would still fail. 
-
-I have even tried to describe the riddle as code, but the result was still disappointing.
+> [!TIP] <b>Insight #1: Autoregressive Models Limitations</b><br>
+> GPT-4 is an autoregressive model that generates sequences by predicting the next token based on previously generated tokens.
+> It memorized the riddle's solution (from Wikipedia, most likely) and modified it by removing the wolf. 
+> However, it does not have an internal understanding of our world; therefore, its reasoning and planning capabilities are limited.
+> Even if we try and force it to print the items on each riverbank after every step and ensure that items can only move with the boat, it would still fail. 
+> I have even tried to describe the riddle as code, but the result was still disappointing.
 
 ### Tooling and Memory
 
