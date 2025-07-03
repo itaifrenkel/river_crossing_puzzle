@@ -416,7 +416,7 @@ Final Answer: "SUCCESS"
 ```
 
 > [!TIP]
-> <b>Insight #7: Deterministic Execution vs Agentic Flexibility<b></br>
+> <b>Insight #7: Deterministic Execution vs Agentic Flexibility</b><br>
 > For GPT-4 to execute the plan deterministically, the plan must be broken down into small tasks and executed sequentially. 
 > The agent running each step must not have access to the complete plan, unless you want them to skip or combine steps. 
 > Even then, when given wrong planning steps (such as moving the goat when it's on the other river bank), the farmer would perform multiple crossings of the river until they either succeed or fail.
@@ -502,11 +502,10 @@ Final Plan:
 
 ```
 
-Insight #9: Avoid State in Long Term Contextual Memory
-
-The final plan phrasing does not include the river state. 
-
- If the final plan included statements such as Now the left bank has a cabbage while the right bank has a farmer and a goat, then the next run would treat these statements as facts. If these contradicted the scout tool output, it would have resulted in a very confused farmer and non-deterministic behavior.
+> [!TIP]
+> <b>Insight #9: Avoid State in Long Term Contextual Memory</b><br>
+> The final plan phrasing does not include the river state. 
+> If the final plan included statements such as Now the left bank has a cabbage while the right bank has a farmer and a goat, then the next run would treat these statements as facts. If these contradicted the scout tool output, it would have resulted in a very confused farmer and non-deterministic behavior.
 
 ### Learning from experience
 
@@ -562,13 +561,11 @@ A farmer wants to ...
 
 ```
 
-Insight #10: Control Flow Challenges 
-
-The control flow is difficult for GPT-4 to follow. 
-
-The prompt "one step at a time, completing each step before moving on to the next" is very important.
-
-Unlike programming languages, previous instructions cannot be relied on to control the flow. Therefore, each instruction must start with an "if" statement.
+> [!TIP]
+> <b>Insight #10: Control Flow Challenges</b><br>
+> The control flow is difficult for GPT-4 to follow. 
+> The prompt "one step at a time, completing each step before moving on to the next" is very important.
+> Unlike programming languages, previous instructions cannot be relied on to control the flow. Therefore, each instruction must start with an "if" statement.
 
 ### A touch of Creativity
 
