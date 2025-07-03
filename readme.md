@@ -332,11 +332,10 @@ Each step must be stripped of numbering prefixes, hyphens, or single quotes, and
 
 ```
 
-Insight #6: Output Schema
-
-When given a data schema, GPT-4 can generate structured data instead of free text.
-
-This comes in very handy when the task flow is dynamic (one task output determines the next task to run).
+> [!TIP]
+> <b>Insight #6: Output Schema</b><br>
+> When given a data schema, GPT-4 can generate structured data instead of free text.
+> This comes in very handy when the task flow is dynamic (one task output determines the next task to run).
 
 The task that reads the plan has the following output definitions:
 
@@ -416,21 +415,18 @@ Final Answer: "SUCCESS"
 
 ```
 
-Insight #7: Deterministic Execution vs Agentic Flexibility 
+> [!TIP]
+> <b>Insight #7: Deterministic Execution vs Agentic Flexibility<b></br>
+> For GPT-4 to execute the plan deterministically, the plan must be broken down into small tasks and executed sequentially. 
+> The agent running each step must not have access to the complete plan, unless you want them to skip or combine steps. 
+> Even then, when given wrong planning steps (such as moving the goat when it's on the other river bank), the farmer would perform multiple crossings of the river until they either succeed or fail.
+> To disable this agentic capability, we could use the model to convert the plan into function calls with parameters and then use a separate tool to deterministically call these functions one by one. 
+> This is the approach taken by other projects, such as Microsoft's Semantic Kernel [Handlebars Planner](https://www.developerscantina.com/p/semantic-kernel-new-planners/). The trade-off is between deterministic behavior and the ability to react to unplanned events or incorrect input.
 
-For GPT-4 to execute the plan deterministically, the plan must be broken down into small tasks and executed sequentially. 
+> [!TIP]
+> <b>Insight #8: Precise Step Descriptions</b><br>
+> Each step must use language that does not leave room for interpretation. For example, The farmer crosses the river becomes The farmer crosses the river alone. Then, the cross_river tool needs to internally watchnout for these cues.
 
-The agent running each step must not have access to the complete plan, unless you want them to skip or combine steps. 
-
-Even then, when given wrong planning steps (such as moving the goat when it's on the other river bank), the farmer would perform multiple crossings of the river until they either succeed or fail.
-
-To disable this agentic capability, we could use the model to convert the plan into function calls with parameters and then use a separate tool to deterministically call these functions one by one. 
-
-This is the approach taken by other projects, such as Microsoft's Semantic Kernel [Handlebars Planner](https://www.developerscantina.com/p/semantic-kernel-new-planners/). The trade-off is between deterministic behavior and the ability to react to unplanned events or incorrect input.
-
-Insight #8: Precise Step Descriptions 
-
-Each step must use language that does not leave room for interpretation. For example, The farmer crosses the river becomes The farmer crosses the river alone. Then, the cross_river tool needs to internally convert "farmer" or "alone" to None to accommodate different model interpretations.
 
 ### Reflecting on the execution
 
