@@ -285,11 +285,10 @@ Our most important design decision was the data flow diagram. This helps visuali
 
 ```
 
-Insight #4: Contextual Memory 
-
-When a task is given to an agent, the agent may [access information from other recent tasks](https://github.com/joaomdmoura/crewAI/blob/2a0e21ca76f744e6409271c53bd1de9cf63d9829/src/crewai/agent.py#L216-L224). This adds implicit data flow paths to the diagram (not shown above). 
-
-To ensure strict data flow control, this feature was disabled in the demo.
+> [!TIP]
+> <b>Insight #4: Contextual Memory </b><br>
+> When a task is given to an agent, the agent may [access information from other recent tasks](https://github.com/joaomdmoura/crewAI/blob/2a0e21ca76f744e6409271c53bd1de9cf63d9829/src/crewai/agent.py#L216-L224). This adds implicit data flow paths to the diagram (not shown above). 
+> To ensure strict data flow control, this feature was disabled in the demo.
 
 <br>
 
@@ -299,19 +298,15 @@ Now, we need another agent, The Farmer, to execute the plan step by step. After 
 
 Then, The Village Wisdom would reflect by comparing the plan with the execution trace. If needed, they would learn from that experience and write an improved plan for the next run. 
 
-Insight #5: Goal Oriented Task Descriptions
-
-Each task prompt must repeat the goal of getting the farmer, goat, and cabbage to the right riverbank.
-
-This is necessary to keep the agents focused on their goal.
-
-The planning task requires a goal to create a relevant plan. 
-
-The execution task requires the goal to stop the plan execution on time. 
-
-The reflection task requires the goal to verify that the execution was successful before reflecting on it. In fact, in more complex scenarios (see the wolf comeback at the end), GPT-4 had blunt logic failures with goal validation (confusing the goat with the wolf). Therefore, I had to separate the goal validation into a separate atomic task for the goal validation to always work.   
-
-CrewAI agents are required to state their goal on creation. This is important but does not replace repeating the goal in every task along the way.
+> [!TIP]
+> <b>Insight #5: Goal Oriented Task Descriptions</b><br>
+> Each task prompt must repeat the goal of getting the farmer, goat, and cabbage to the right riverbank.
+> This is necessary to keep the agents focused on their goal.<br>
+> The planning task requires a goal to create a relevant plan. <br>
+> The execution task requires the goal to stop the plan execution on time. <br>
+> The reflection task requires the goal to verify that the execution was successful before reflecting on it. <br>
+> In fact, in more complex scenarios (see the wolf comeback at the end), GPT-4 had blunt logic failures with goal validation (confusing the goat with the wolf). Therefore, I had to separate the goal validation into a separate atomic task for the goal validation to always work.   
+> CrewAI agents are required to state their goal on creation. This is important but does not replace repeating the goal in every task along the way.
 
 ### Executing the plan
 
