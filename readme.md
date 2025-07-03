@@ -257,9 +257,9 @@ Initial Plan:
 
 Notice how the resulting plan uses the terms left and right bank.
 
-Insight #3: Grounding with Reality 
-
-By providing the model a tool that describes the (simulated) world, the resulting plan is a bit more grounded, and easier to follow.
+> [!TIP]
+> <b>Insight #3: Grounding with Reality </b><br>
+> By providing the model a tool that describes the (simulated) world, the resulting plan is a bit more grounded, and easier to follow.
 
 <br>
 
