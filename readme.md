@@ -181,7 +181,7 @@ def write_wisdom_file_tool(filename, contents):
 ```
 
 > [!TIP]
-> Insight #2: Tool Guardrails 
+> Insight #2 - Tool Guardrails <br>
 > LangChain comes with read-only file tools that are compatible with CrewAI agents. However, it does not include tools for overwriting files. 
 > I started with a naive one-liner write file tool. However, after the model attempted to overwrite unrelated files, I added input parameter normalization and validation. 
 > In general, large language models and tools must include guardrails. In this case we ensure that the tool can only overwrite a predefined list of files. 
