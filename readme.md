@@ -8,29 +8,8 @@ By using GPT-4, the CrewAI framework, and prompting, this project shows that eve
 
 After reading this, you should have a better understanding of how agentic abilities can be used to design around GPT-4 limitations, in addition to 10 practical insights.
 
-We discuss some of the key components of Agentic Workflows.
-
-- [Introduction](#introduction)
-
-  - [Problem Statement](#problem-statement)
-
-  - [Reasoning and Planning](#reasoning-and-planning)
-
-  - [Tooling and Memory](#tooling-and-memory)
-
-  - [Goal-Oriented Behavior](#goal-oriented-behavior)
-
-    - [Executing the plan](#executing-the-plan)
-
-    - [Reflecting on the execution](#reflecting-on-the-execution)
-
-    - [Learning from experience](#learning-from-experience)
-
-  - [A touch of creativity](#a-touch-of-creativity)
-
-- [Conclusion](#conclusion) 
-
-- [Running the example](#running-the-example)
+We begin by outlining [the problem](#problem-statement) and examining how the agent  [reasons and plans](#reasoning-and-planning) under constraints. We then get closer to a solution by looking at how [tools and memory](#tooling-and-memory) support the workflow. We solve the problem using [goal-oriented behavior](#goal-oriented-behavior) that involves execution, reflection, and learning. To introduce variability, we add sheep-eating wolves randomly to the riddle, and the agent finds  [creative ways](#a-touch-of-creativity) to respond. 
+We [conclude](#conclusion) with notes on how to run the example code.
 
 ### Problem Statement
 
