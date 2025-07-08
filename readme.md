@@ -39,15 +39,12 @@ You will find that the answer starts off okay, but then bungles the whole thing.
 
 Large Language Models (LLMs) such as GPT-4 are trained on a huge amount of data.
 
-To focus the model on the relevant parts of what it has learned, we created a new agent focused on problem-solving skills.
+To focus the model on the relevant parts of what it has learned, we created "The Village Wisdom". It is a new agent focused on problem-solving skills.
 
-We also use the phrase ["Let's think step by step"](https://arxiv.org/pdf/2205.11916) which was found to improve the LLM’s ability to reason. It is the human equivalent of thinking out loud.
+The wisdom is instructed to use the phrase ["Let's think step by step"](https://arxiv.org/pdf/2205.11916) which was found to improve the LLM’s ability to reason. It is the human equivalent of thinking out loud.
 
-
-Meet the "Village Wisdom": 
 
 ```
-
 The Village Wisdom is strong-willed. 
 
 They like solving problems, by breaking them into steps.
