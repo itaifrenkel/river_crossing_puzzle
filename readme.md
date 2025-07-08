@@ -180,7 +180,7 @@ A farmer wants to ...
 
 ```       
 
-Here is what The Village Wisdom has to say:
+Let's read carefully what The Village Wisdom has to say. At first, it just looks like it invoked the function scout() because it was told to. However, notice that the function call is sandwiched between a "thought" and an "observation" returned by the scout tool. This is a single [thought-action-observation](https://www.promptingguide.ai/techniques/react) iteration. 
 
 ```
 
@@ -200,11 +200,7 @@ Now the left bank has a goat, a cabbage, and a farmer while the right bank is em
 
 ```
 
-At first, it just looks like the agent just invoked the function scout() because it was told to. 
-
-However, notice how the function call is sandwiched between a "thought" and an "observation" returned by the tool. 
-
-This is a single [thought-action-observation](https://www.promptingguide.ai/techniques/react) iteration. 
+Notice how the resulting plan based on svouting uses the terms left and right bank.
 
 ```
 
@@ -230,21 +226,20 @@ Initial Plan:
 
 ```
 
-Notice how the resulting plan uses the terms left and right bank.
-
 > [!TIP]
 > <b>Insight #3: Grounding with Reality </b><br>
 > By providing the model a tool that describes the (simulated) world, the resulting plan is a bit more grounded, and easier to follow.
 
 <br>
 
-However, the resulting plan was still incorrect. At least now, a human may manually edit the file, but that would be a bit like cheating. 
+Nevertheless, the resulting plan is still incorrect. At least now, a human may manually edit the file, but that would be a bit like cheating. 
 
 ### Goal-Oriented Behavior
 
-To improve the plan, we rely on the fact that the first three steps of the plan are actually correct. We designed a flow of tasks from which The Village Wisdom could learn that only the first three steps were needed.
+To improve the plan, we rely on the fact that the first three steps of the plan are actually correct. 
 
-Our most important design decision was the data flow diagram. This helps visualize how tasks are connected and how information is shared. Large language models are good at processing and generating text. So each task processes an input prompt, and generates new text in response.
+We designed a flow of tasks from which The Wisdom could learn that only the first three steps were needed. A data flow diagram helps us visualize the sequence of tasks and what information is exchanged between them.
+Large language models are good at processing and generating text. So each task processes an input prompt, and generates new text in response.
 
 ```
 
