@@ -53,7 +53,7 @@ Their prompt instruction always starts with "Let's think step by step.”
 
 ```
 
-Each agent can be given a task to perform. Let's ask the village wisdom to plan the farmer's river crossing. They may do a better job.
+Each agent can be given a task to perform. Let's task the village wisdom with planning the farmer's river crossing. They may do a better job.
 
 ```
 
