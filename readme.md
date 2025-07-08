@@ -101,9 +101,9 @@ Now, the Farmer, the goat, and the cabbage are safely on the other side of the r
 
 High-end language models have demonstrated an emergent capability to solve problems by using external tools. 
 
-We will give The Wisdom the ability to scout the river to ground the plan using the actual opening state. 
+We will provide The Wisdom with a tool that scouts the river and returns the actual positions of the farmer, the goat and the cabbage. 
 
-Additionally, The Village Wisdom will get access to files, allowing it to: 
+Additionally, The Wisdom will get access to files, allowing it to: 
 
 * Control information that is passed on to downstream tasks. (short term memory)
 
@@ -160,7 +160,7 @@ def write_wisdom_file_tool(filename, contents):
 
 <br>
 
-In order for the wisdom to deterministically use the tool, we change the task description to be explicit about it.
+In order for The Wisdom to deterministically use these tools, we change the task description to be explicit about it.
 
 ```
 
