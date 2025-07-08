@@ -200,7 +200,7 @@ Now the left bank has a goat, a cabbage, and a farmer while the right bank is em
 
 ```
 
-Notice how the resulting plan based on svouting uses the terms left and right bank.
+Notice how the resulting plan based on scouting uses the terms left and right bank.
 
 ```
 
@@ -266,7 +266,7 @@ We've already discussed The Village Wisdom and the imperfect planning task.
 
 Now, we need another agent, The Farmer, to execute the plan step by step. After step 3, The Farmer would "realize" that they have achieved the goal and stop executing the plan.
 
-Then, The Village Wisdom would reflect by comparing the plan with the execution trace. If needed, they would learn from that experience and write an improved plan for the next run. 
+Then, The Wisdom would reflect by comparing the plan with the execution trace. If needed, they would learn from that experience and write an improved plan for the next run. 
 
 > [!TIP]
 > <b>Insight #5: Goal Oriented Task Descriptions</b><br>
@@ -329,9 +329,7 @@ This forces the result of the task to be parsed into a valid Python list of stri
 
 Now, The Farmer is supposed to execute the plan step-by-step.
 
-In most CrewAI examples you might have read, the list of tasks is static. In this example, we dynamically create a new task for each of the plan steps. 
-
-Here is the task template with the {step} placeholder:
+In most CrewAI examples you might have read, the list of tasks is static. In this example, we use a rask template to dynamically create a new task for each step of the plan. 
 
 ```
 
