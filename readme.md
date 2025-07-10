@@ -13,11 +13,9 @@ We [conclude](#conclusion) with notes on how to run the example code.
 
 ### Problem Statement
 
-I read about this small experiment in a Twitter comment thread.
+I came across a small experiment. When GPT-4 is asked to solve the well-known [river crossing puzzle](https://en.wikipedia.org/wiki/River_crossing_puzzle), it provides the correct answer. However, when asked a simpler riddle without the wolf, it gets it wrong. Take a moment to ask your favorite model to solve the modified riddle. 
 
-When asked to solve the [river crossing puzzle](https://en.wikipedia.org/wiki/River_crossing_puzzle) without the wolf, GPT-4 gave a wrong answer.
-
-(I would give credit to the author if anyone could point me to that thread.)
+You will find that the answer starts off okay, but then bungles the whole thing. The farmer reaches the other side with the cabbage and goat but redundantly takes the goat back and forth. In some cases, even the wolf finds itself back into the solution, even though the problem description had no mention of a wolf.
 
 ```
 
@@ -31,9 +29,6 @@ How can the farmer bring themselves, the boat, and all items across the river?
 
 ```
 
-Take a moment to ask your favorite model to solve the modified riddle. 
-
-You will find that the answer starts off okay, but then bungles the whole thing. The farmer reaches the other side with the cabbage and goat but redundantly takes the goat back and forth. In some cases, even the wolf finds itself back into the solution, even though the problem description had no mention of a wolf.
 
 ### Reasoning and planning
 
